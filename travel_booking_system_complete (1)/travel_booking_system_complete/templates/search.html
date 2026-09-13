@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Search results — Wayfare{% endblock %}
+
+{% block content %}
+  <section class="search-page">
+    <div class="container">
+
+      <div class="trip-type-toggle" role="group" aria-label="Trip type" id="search-type-toggle">
+        <button type="button" data-type="flight">Flights</button>
+        <button type="button" data-type="hotel">Hotels</button>
+        <button type="button" data-type="bus">Buses</button>
+        <button type="button" data-type="">All</button>
+      </div>
+
+      <form class="search-bar" id="search-form-page">
+        <input type="hidden" name="type" id="page-trip-type-input" value="">
+
+        <div class="search-field" id="page-field-source">
+          <label for="page-source">From</label>
+          <input type="text" id="page-source" name="source" placeholder="New York" autocomplete="off">
+        </div>
+
+        <div class="search-field">
+          <label for="page-destination">To</label>
+          <input type="text" id="page-destination" name="destination" placeholder="London" autocomplete="off">
+        </div>
+
+        <div class="search-field">
+          <label for="page-date">Depart</label>
+          <input type="date" id="page-date" name="date">
+        </div>
+
+        <button type="submit" class="search-submit">Search</button>
+      </form>
+
+      <div class="section-head" style="margin-top:40px;">
+        <div>
+          <h2 id="results-heading">All routes</h2>
+          <p id="results-subheading">Showing everything we've got — narrow it down above.</p>
+        </div>
+        <div class="sort-buttons">
+          <span>Sort:</span>
+          <button type="button" class="sort-btn active" data-sort="price">Price</button>
+          <button type="button" class="sort-btn" data-sort="departure_time">Departure</button>
+        </div>
+      </div>
+
+      <div class="route-list" id="search-results">
+        <div class="routes-loading">Loading routes…</div>
+      </div>
+
+    </div>
+  </section>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+{% endblock %}

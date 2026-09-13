@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Log in — Wayfare{% endblock %}
+
+{% block content %}
+  <section class="auth-section">
+    <div class="auth-card">
+      <div class="eyebrow-route">
+        <span class="dot"></span><span class="path"></span><span>Welcome back</span>
+      </div>
+      <h1 class="auth-title">Log in to your account</h1>
+      <p class="auth-sub">Pick up where you left off and manage your bookings.</p>
+
+      <form method="POST" action="{{ url_for('login') }}" class="auth-form">
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required autofocus>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+
+        <button type="submit" class="btn-primary btn-block">Log in</button>
+      </form>
+
+      <p class="auth-footer-link">
+        New to Wayfare? <a href="{{ url_for('register') }}">Create an account</a>
+      </p>
+    </div>
+  </section>
+{% endblock %}

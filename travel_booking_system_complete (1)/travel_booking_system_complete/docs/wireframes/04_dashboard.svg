@@ -1,0 +1,40 @@
+<svg viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect width="800" height="620" fill="#ffffff" stroke="#999"/>
+  <rect x="0" y="0" width="800" height="56" fill="#f4f4f4" stroke="#bbb"/>
+  <rect x="24" y="18" width="90" height="20" fill="#ccc"/>
+  <rect x="600" y="18" width="90" height="20" fill="#ddd"/>
+  <rect x="700" y="18" width="70" height="20" fill="#ddd"/>
+
+  <rect x="60" y="90" width="260" height="22" fill="#ccc"/>
+  <rect x="60" y="120" width="380" height="14" fill="#eee"/>
+  <rect x="620" y="92" width="120" height="34" rx="17" fill="#999"/>
+  <text x="640" y="114" font-size="11" fill="#fff">Book a new trip</text>
+
+  <!-- booking card 1 -->
+  <rect x="60" y="170" width="680" height="90" rx="6" fill="#fff" stroke="#ccc"/>
+  <rect x="80" y="188" width="50" height="16" rx="4" fill="#e9e9e9"/>
+  <text x="80" y="222" font-size="13" fill="#444">New York -------- London</text>
+  <text x="80" y="242" font-size="11" fill="#888">14 Sep 2026, 09:20 · 2 travelers</text>
+  <rect x="680" y="188" width="60" height="16" rx="8" fill="#dcdcdc"/>
+  <text x="695" y="200" font-size="9" fill="#666">confirmed</text>
+  <text x="700" y="222" font-size="13" fill="#333">$900.00</text>
+  <text x="640" y="242" font-size="9" fill="#999">Ref: txn_bc10ed80</text>
+  <text x="640" y="255" font-size="10" fill="#c33" text-decoration="underline">Cancel booking</text>
+
+  <!-- booking card 2 -->
+  <rect x="60" y="272" width="680" height="90" rx="6" fill="#fff" stroke="#ccc"/>
+  <rect x="80" y="290" width="50" height="16" rx="4" fill="#e9e9e9"/>
+  <text x="80" y="324" font-size="13" fill="#444">Boston -------- New York</text>
+  <text x="80" y="344" font-size="11" fill="#888">13 Sep 2026, 06:30 · 1 traveler</text>
+  <rect x="680" y="290" width="60" height="16" rx="8" fill="#dcdcdc"/>
+  <text x="693" y="302" font-size="9" fill="#666">cancelled</text>
+  <text x="700" y="324" font-size="13" fill="#333">$35.00</text>
+
+  <!-- empty state alt view, shown smaller below as annotation -->
+  <rect x="60" y="400" width="680" height="150" rx="6" fill="#fbfbfb" stroke="#ddd" stroke-dasharray="6,6"/>
+  <text x="340" y="460" font-size="13" fill="#999">[ Empty state shown when user has no bookings ]</text>
+  <rect x="340" y="480" width="120" height="16" fill="#e5e5e5"/>
+  <rect x="330" y="504" width="140" height="30" rx="15" fill="#bbb"/>
+
+  <text x="20" y="612" font-size="11" fill="#bbb">Wireframe: Dashboard / My Bookings page</text>
+</svg>

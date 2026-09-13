@@ -1,0 +1,46 @@
+<svg viewBox="0 0 800 620" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect width="800" height="620" fill="#ffffff" stroke="#999"/>
+  <rect x="0" y="0" width="800" height="56" fill="#f4f4f4" stroke="#bbb"/>
+  <rect x="24" y="18" width="90" height="20" fill="#ccc"/>
+
+  <!-- Login card (left) -->
+  <rect x="60" y="140" width="320" height="340" rx="8" fill="#fff" stroke="#999" stroke-width="1.5"/>
+  <rect x="90" y="175" width="140" height="16" fill="#e5e5e5"/>
+  <rect x="90" y="205" width="220" height="22" fill="#ccc"/>
+  <rect x="90" y="235" width="240" height="14" fill="#eee"/>
+
+  <text x="90" y="278" font-size="11" fill="#888">Email address</text>
+  <rect x="90" y="284" width="260" height="34" rx="4" fill="#f7f7f7" stroke="#ccc"/>
+
+  <text x="90" y="336" font-size="11" fill="#888">Password</text>
+  <rect x="90" y="342" width="260" height="34" rx="4" fill="#f7f7f7" stroke="#ccc"/>
+
+  <rect x="90" y="394" width="260" height="38" rx="19" fill="#999"/>
+  <text x="195" y="418" font-size="13" fill="#fff">Log in</text>
+
+  <text x="120" y="450" font-size="11" fill="#999">New here? Create an account →</text>
+
+  <!-- Register card (right) -->
+  <rect x="420" y="100" width="320" height="440" rx="8" fill="#fff" stroke="#999" stroke-width="1.5"/>
+  <rect x="450" y="135" width="140" height="16" fill="#e5e5e5"/>
+  <rect x="450" y="165" width="220" height="22" fill="#ccc"/>
+
+  <text x="450" y="215" font-size="11" fill="#888">Full name</text>
+  <rect x="450" y="221" width="260" height="30" rx="4" fill="#f7f7f7" stroke="#ccc"/>
+
+  <text x="450" y="268" font-size="11" fill="#888">Email address</text>
+  <rect x="450" y="274" width="260" height="30" rx="4" fill="#f7f7f7" stroke="#ccc"/>
+
+  <text x="450" y="321" font-size="11" fill="#888">Phone (optional)</text>
+  <rect x="450" y="327" width="260" height="30" rx="4" fill="#f7f7f7" stroke="#ccc"/>
+
+  <text x="450" y="374" font-size="11" fill="#888">Password</text>
+  <rect x="450" y="380" width="260" height="30" rx="4" fill="#f7f7f7" stroke="#ccc"/>
+
+  <rect x="450" y="426" width="260" height="38" rx="19" fill="#999"/>
+  <text x="530" y="450" font-size="13" fill="#fff">Create account</text>
+
+  <text x="490" y="490" font-size="11" fill="#999">Already registered? Log in →</text>
+
+  <text x="20" y="612" font-size="11" fill="#bbb">Wireframe: Login &amp; Register pages</text>
+</svg>

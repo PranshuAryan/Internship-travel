@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Confirm your booking — Wayfare{% endblock %}
+
+{% block content %}
+  <section class="booking-section" data-trip-id="{{ trip.id }}" data-price="{{ trip.price }}" data-seats="{{ trip.seats_available }}">
+    <div class="container booking-grid">
+
+      <div class="booking-summary-card">
+        <span class="route-type-badge">{{ trip.trip_type }}</span>
+        <h2 class="booking-summary-title">
+          {% if trip.trip_type == 'hotel' %}{{ trip.provider }}{% else %}{{ trip.source }} → {{ trip.destination }}{% endif %}
+        </h2>
+
+        {% if trip.trip_type != 'hotel' %}
+          <p class="booking-summary-line">{{ trip.provider }}</p>
+        {% else %}
+          <p class="booking-summary-line">{{ trip.destination }}</p>
+        {% endif %}
+
+        <div class="booking-summary-times">
+          <div>
+            <span class="label">{{ 'Check-in' if trip.trip_type == 'hotel' else 'Departs' }}</span>
+            <strong>{{ trip.departure_time.strftime('%d %b %Y, %I:%M %p') }}</strong>
+          </div>
+          <div>
+            <span class="label">{{ 'Check-out' if trip.trip_type == 'hotel' else 'Arrives' }}</span>
+            <strong>{{ trip.arrival_time.strftime('%d %b %Y, %I:%M %p') }}</strong>
+          </div>
+        </div>
+
+        <div class="booking-summary-price">
+          <span>${{ '%.2f'|format(trip.price) }}</span>
+          <small>{{ '/ night' if trip.trip_type == 'hotel' else '/ person' }}</small>
+        </div>
+
+        <p class="seats-left">{{ trip.seats_available }} seats left</p>
+      </div>
+
+      <div class="booking-form-card">
+        <h2>Passenger &amp; payment details</h2>
+
+        <div id="booking-form-wrapper">
+          <div class="form-group">
+            <label for="passengers-input">Number of travelers</label>
+            <select id="passengers-input">
+              {% for n in range(1, 6) %}
+                <option value="{{ n }}">{{ n }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="payment-method">Payment method</label>
+            <select id="payment-method">
+              <option value="mock_card">Credit / debit card (mock)</option>
+              <option value="mock_wallet">Digital wallet (mock)</option>
+            </select>
+          </div>
+
+          <div class="booking-total-row">
+            <span>Total</span>
+            <strong id="booking-total">${{ '%.2f'|format(trip.price) }}</strong>
+          </div>
+
+          <button type="button" id="confirm-booking-btn" class="btn-primary btn-block">Confirm booking</button>
+          <div id="booking-error" class="form-error" hidden></div>
+        </div>
+
+        <div id="booking-confirmation" class="confirmation-box" hidden>
+          <div class="confirmation-icon">✓</div>
+          <h3>Booking confirmed</h3>
+          <p>Booking reference <strong id="confirmation-booking-id"></strong></p>
+          <p>Transaction ID <strong id="confirmation-txn-id"></strong></p>
+          <a href="{{ url_for('dashboard') }}" class="btn-primary btn-block">View my bookings</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='js/booking.js') }}"></script>
+{% endblock %}

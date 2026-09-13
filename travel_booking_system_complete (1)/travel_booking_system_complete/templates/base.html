@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Wayfare — Book flights, hotels & buses{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a href="{{ url_for('index') }}" class="brand">Way<span>fare</span></a>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('search') }}">Search</a></li>
+        {% if current_user.is_authenticated %}
+          <li><a href="{{ url_for('dashboard') }}">My bookings</a></li>
+          <li><a href="{{ url_for('logout') }}">Log out</a></li>
+        {% else %}
+          <li><a href="{{ url_for('login') }}">Log in</a></li>
+          <li><a href="{{ url_for('register') }}" class="btn-nav-primary">Sign up</a></li>
+        {% endif %}
+      </ul>
+      <button class="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <div class="flash-messages">
+        {% for message in messages %}
+          <div class="flash">{{ message }}</div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Wayfare</h4>
+          <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('search') }}">Search</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="{{ url_for('login') }}">Log in</a></li>
+            <li><a href="{{ url_for('register') }}">Sign up</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Trip types</h4>
+          <ul>
+            <li><a href="{{ url_for('search') }}?type=flight">Flights</a></li>
+            <li><a href="{{ url_for('search') }}?type=hotel">Hotels</a></li>
+            <li><a href="{{ url_for('search') }}?type=bus">Buses</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Wayfare. Built as an internship project.
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
