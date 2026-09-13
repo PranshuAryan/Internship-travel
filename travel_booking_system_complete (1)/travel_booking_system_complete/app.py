@@ -204,8 +204,12 @@ def api_cancel_booking(booking_id):
     db.session.commit()
     return jsonify({'success': True, 'booking_id': booking.id, 'status': booking.status})
 
+# Runs on import too (Vercel imports this module rather than executing it as
+# a script), so tables get created and seeded whether we're running locally
+# with `python app.py` or as a serverless function on Vercel.
+with app.app_context():
+    db.create_all()
+    seed_mock_data()
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-        seed_mock_data()
     app.run(debug=True)
